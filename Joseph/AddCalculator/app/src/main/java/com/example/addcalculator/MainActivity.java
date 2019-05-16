@@ -7,14 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.arithmetic.Arithmetic;
 
+import static java.lang.Integer.parseInt;
+
+public class MainActivity extends AppCompatActivity {
     EditText number1;
     EditText number2;
     Button Add_button;
     TextView result;
     Button Clear_button;
-    private Bundle savedIntanceState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
         Add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double num1 = Double.parseDouble(number1.getText().toString());
-                double num2 = Double.parseDouble(number2.getText().toString());
-
-                double sum = num1 + num2;
-
-                result.setText(Double.toString(sum));
-
+                Arithmetic arithmetic = new Arithmetic();
+                int num1 = parseInt(number1.getText().toString());
+                int num2 = parseInt(number2.getText().toString());
+                arithmetic.SetNumber1(num1);
+                arithmetic.SetNumber2(num2);
+                result.setText(arithmetic.Add());
             }
         });
 
