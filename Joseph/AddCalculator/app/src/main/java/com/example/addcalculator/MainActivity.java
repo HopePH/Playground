@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.arithmetic.Arithmetic;
 import com.example.arithmetic.Divide;
 import com.example.arithmetic.Multiply;
@@ -38,12 +40,10 @@ public class MainActivity extends AppCompatActivity {
         Add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Arithmetic arithmetic = new Arithmetic();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                arithmetic.SetNumber1(num1);
-                arithmetic.SetNumber2(num2);
-                result.setText(String.valueOf(num1 + num2));
+                    Arithmetic arithmetic = new Arithmetic();
+                    arithmetic.SetNumber1(parseInt(number1.getText().toString()));
+                    arithmetic.SetNumber2(parseInt(number2.getText().toString()));
+                    result.setText(String.valueOf(arithmetic.Add()));
             }
         });
 
@@ -99,5 +99,4 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-
 }
