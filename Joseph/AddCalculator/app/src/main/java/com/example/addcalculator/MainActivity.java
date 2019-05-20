@@ -24,64 +24,61 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        try {
 
-        number1 = findViewById(R.id.edit_text);
-        number2 = findViewById(R.id.edit_text2);
-        Add_button = findViewById(R.id.button);
-        Sub_button = findViewById(R.id.button4);
-        Multiply_button = findViewById(R.id.button3);
-        Divide_button = findViewById(R.id.button5);
-        result = findViewById(R.id.textView_answer);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
-        Add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Arithmetic arithmetic = new Arithmetic();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                arithmetic.SetNumber1(num1);
-                arithmetic.SetNumber2(num2);
-                result.setText(String.valueOf(num1 + num2));
-            }
-        });
+            number1 = findViewById(R.id.edit_text);
+            number2 = findViewById(R.id.edit_text2);
+            Add_button = findViewById(R.id.button);
+            Sub_button = findViewById(R.id.button4);
+            Multiply_button = findViewById(R.id.button3);
+            Divide_button = findViewById(R.id.button5);
+            result = findViewById(R.id.textView_answer);
 
-        Sub_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Subtract subtract = new Subtract();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                subtract.SetNumber1(num1);
-                subtract.SetNumber2(num2);
-                result.setText(String.valueOf(num1 - num2));
-            }
-        });
+            Add_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Arithmetic arithmetic = new Arithmetic();
+                    arithmetic.SetNumber1(parseInt(number1.getText().toString()));
+                    arithmetic.SetNumber2(parseInt(number2.getText().toString()));
+                    result.setText(String.valueOf(arithmetic.Add()));
+                }
+            });
 
-        Multiply_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Multiply multiply = new Multiply();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                multiply.SetNumber1(num1);
-                multiply.SetNumber2(num2);
-                result.setText(String.valueOf(num1 * num2));
-            }
-        });
+            Sub_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Subtract subtract = new Subtract();
+                    subtract.SetNumber1(parseInt(number1.getText().toString()));
+                    subtract.SetNumber2(parseInt(number2.getText().toString()));
+                    result.setText(String.valueOf(subtract.Subtract()));
+                }
+            });
 
-        Divide_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Divide divide = new Divide();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                divide.SetNumber1(num1);
-                divide.SetNumber2(num2);
-                result.setText(String.valueOf(num1 / num2));
-            }
-        });
+            Multiply_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Multiply multiply = new Multiply();
+                    multiply.SetNumber1(parseInt(number1.getText().toString()));
+                    multiply.SetNumber2(parseInt(number2.getText().toString()));
+                    result.setText(String.valueOf(multiply.Multiply()));
+                }
+            });
+
+            Divide_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Divide divide = new Divide();
+                    divide.SetNumber1(parseInt(number1.getText().toString()));
+                    divide.SetNumber2(parseInt(number2.getText().toString()));
+                    result.setText(String.valueOf(divide.Divide()));
+                }
+            });
+        } catch (Exception e){
+            System.out.println("Error");
+        }
 
         {
             final EditText edit_text = findViewById(R.id.edit_text);
