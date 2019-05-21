@@ -24,64 +24,72 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
-        number1 = findViewById(R.id.edit_text);
-        number2 = findViewById(R.id.edit_text2);
-        Add_button = findViewById(R.id.button);
-        Sub_button = findViewById(R.id.button4);
-        Multiply_button = findViewById(R.id.button3);
-        Divide_button = findViewById(R.id.button5);
-        result = findViewById(R.id.textView_answer);
+            number1 = findViewById(R.id.edit_text);
+            number2 = findViewById(R.id.edit_text2);
+            Add_button = findViewById(R.id.button);
+            Sub_button = findViewById(R.id.button4);
+            Multiply_button = findViewById(R.id.button3);
+            Divide_button = findViewById(R.id.button5);
+            result = findViewById(R.id.textView_answer);
 
-        Add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Arithmetic arithmetic = new Arithmetic();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                arithmetic.SetNumber1(num1);
-                arithmetic.SetNumber2(num2);
-                result.setText(String.valueOf(num1 + num2));
-            }
-        });
+            Add_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        Arithmetic arithmetic = new Arithmetic();
+                        arithmetic.SetNumber1(parseInt(number1.getText().toString()));
+                        arithmetic.SetNumber2(parseInt(number2.getText().toString()));
+                        result.setText(String.valueOf(arithmetic.Add()));
+                    } catch (Exception e){
+                        System.out.println("Error in addition!");
+                    }
+                }
+            });
 
-        Sub_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Subtract subtract = new Subtract();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                subtract.SetNumber1(num1);
-                subtract.SetNumber2(num2);
-                result.setText(String.valueOf(num1 - num2));
-            }
-        });
+            Sub_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Subtract subtract = new Subtract();
+                        subtract.SetNumber1(parseInt(number1.getText().toString()));
+                        subtract.SetNumber2(parseInt(number2.getText().toString()));
+                        result.setText(String.valueOf(subtract.Subtract()));
+                    } catch (Exception e){
+                        System.out.println("Error in subtraction!");
+                    }
+                }
+            });
 
-        Multiply_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Multiply multiply = new Multiply();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                multiply.SetNumber1(num1);
-                multiply.SetNumber2(num2);
-                result.setText(String.valueOf(num1 * num2));
-            }
-        });
+            Multiply_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Multiply multiply = new Multiply();
+                        multiply.SetNumber1(parseInt(number1.getText().toString()));
+                        multiply.SetNumber2(parseInt(number2.getText().toString()));
+                        result.setText(String.valueOf(multiply.Multiply()));
+                    } catch (Exception e){
+                        System.out.println("Error in multiplication!");
+                    }
+                }
+            });
 
-        Divide_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Divide divide = new Divide();
-                int num1 = parseInt(number1.getText().toString());
-                int num2 = parseInt(number2.getText().toString());
-                divide.SetNumber1(num1);
-                divide.SetNumber2(num2);
-                result.setText(String.valueOf(num1 / num2));
-            }
-        });
+            Divide_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Divide divide = new Divide();
+                        divide.SetNumber1(parseInt(number1.getText().toString()));
+                        divide.SetNumber2(parseInt(number2.getText().toString()));
+                        result.setText(String.valueOf(divide.Divide()));
+                    } catch (Exception e){
+                        System.out.println("Error in division!");
+                    }
+                }
+            });
 
         {
             final EditText edit_text = findViewById(R.id.edit_text);
@@ -92,9 +100,13 @@ public class MainActivity extends AppCompatActivity {
             Clear_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    edit_text.setText("");
-                    edit_text2.setText("");
-                    textView_answer.setText("");
+                    try {
+                        edit_text.setText("");
+                        edit_text2.setText("");
+                        textView_answer.setText("");
+                    } catch (Exception e){
+                        System.out.println("Error!");
+                    }
                 }
             });
         }
