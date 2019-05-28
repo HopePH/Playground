@@ -17,13 +17,15 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Entry x:Name="num1" Placeholder="Enter first number" Grid.Row="0" Grid.Column="0"/>
-        <Entry x:Name="num2" Placeholder="Enter second number" Grid.Row="1" Grid.Column="0"/>
-        <Entry x:Name="result" Placeholder="Answer" Grid.Row="2" Grid.Column="0"/>
-        <Button x:Name="Addbtn" Text="ADD" Grid.Row="3" Grid.Column="0" Clicked="Addbtn_Clicked"/>
-        <Button x:Name="Subbtn" Text="ADD" Grid.Row="3" Grid.Column="1" Clicked="Subbtn_Clicked"/>
-        <Button x:Name="Mulbtn" Text="ADD" Grid.Row="4" Grid.Column="0" Clicked="Mulbtn_Clicked"/>
-        <Button x:Name="Divbtn" Text="ADD" Grid.Row="3" Grid.Column="1" Clicked="Divbtn_Clicked"/>
-        <Button x:Name="Clearbtn" Text="ADD" Grid.Row="5" Grid.Column="0" Clicked="Clearbtn_Clicked"/>
+        <Entry x:Name="num1" Placeholder="Enter first number" Grid.Row="0" Grid.ColumnSpan="2" Keyboard="Numeric"/>
+        <Entry x:Name="num2" Placeholder="Enter second number" Grid.Row="1" Grid.ColumnSpan="2" Keyboard="Numeric"/>
+        <Entry x:Name="result" Placeholder="Answer" Grid.Row="2" Grid.ColumnSpan="2" InputTransparent="True"/>
+        <Button x:Name="BtnAdd" Text="ADD" Grid.Row="3" Grid.Column="0" Clicked="BtnAdd_Clicked"/>
+        <Button x:Name="BtnSub" Text="SUB" Grid.Row="3" Grid.Column="1" Clicked="BtnSub_Clicked"/>
+        <Button x:Name="BtnMul" Text="MULTIPLY" Grid.Row="4" Grid.Column="0" Clicked="BtnMul_Clicked"/>
+        <Button x:Name="BtnDiv" Text="DIVIDE" Grid.Row="4" Grid.Column="1" Clicked="BtnDiv_Clicked"/>
+        <Button x:Name="BtnClear" Text="CLEAR" Grid.Row="5" Grid.Column="0" Clicked="BtnClear_Clicked"/>
+        <Button x:Name="BtnClick" Text="CLICK ME!" Grid.Row="5" Grid.Column="1" Clicked="BtnClick_Clicked"/>
+
     </Grid>
 </ContentPage>

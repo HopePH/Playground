@@ -54,7 +54,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyService\Calculator.cs" />
+    <Compile Include="DependencyService\CalculatorUtility.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,10 +80,15 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\JavaBinding\JavaBinding\JavaBinding.csproj">
+      <Project>{B26CAEC3-BD94-4AFD-BDCD-AD81889986AA}</Project>
+      <Name>JavaBinding</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XamarinBindings\XamarinBindings.csproj">
       <Project>{E8856709-9AB3-4A65-9AB3-693049772D81}</Project>
       <Name>XamarinBindings</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
