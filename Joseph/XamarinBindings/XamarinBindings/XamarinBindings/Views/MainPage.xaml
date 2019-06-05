@@ -18,8 +18,16 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Entry x:Name="num1" Placeholder="Enter first number" Grid.Row="0" Grid.ColumnSpan="2" Keyboard="Numeric"/>
-        <Entry x:Name="num2" Placeholder="Enter second number" Grid.Row="1" Grid.ColumnSpan="2" Keyboard="Numeric"/>
+        <Entry x:Name="num1" Placeholder="Enter first number" Grid.Row="0" Grid.ColumnSpan="2" Keyboard="Numeric">
+            <Entry.Behaviors>
+                <local:EnrtyLenghtValidationBehaviors MaxLenght="8"/>
+            </Entry.Behaviors>
+        </Entry>
+        <Entry x:Name="num2" Placeholder="Enter second number" Grid.Row="1" Grid.ColumnSpan="2" Keyboard="Numeric">
+            <Entry.Behaviors>
+                <local:EnrtyLenghtValidationBehaviors MaxLenght="8"/>
+            </Entry.Behaviors>
+        </Entry>
         <Entry x:Name="result" Placeholder="Answer" Grid.Row="2" Grid.ColumnSpan="2" InputTransparent="True"/>
         <Button x:Name="BtnAdd" Text="ADD" Grid.Row="3" Grid.Column="0" Clicked="BtnAdd_Clicked"/>
         <Button x:Name="BtnSub" Text="SUB" Grid.Row="3" Grid.Column="1" Clicked="BtnSub_Clicked"/>

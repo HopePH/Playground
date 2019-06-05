@@ -1,5 +1,4 @@
 ﻿using Com.Example.Arithmetic;
-using System;
 using Utility;
 using Xamarin.Forms;
 
