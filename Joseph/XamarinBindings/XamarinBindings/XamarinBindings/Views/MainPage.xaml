@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:XamarinBindings"
              x:Class="XamarinBindings.MainPage">
 
+
     <Grid Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>

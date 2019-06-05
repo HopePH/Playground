@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinBindings.iOS", "Xama
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinBindings", "XamarinBindings\XamarinBindings\XamarinBindings.csproj", "{E3B2CECC-DFAC-47C4-9792-ABBE2735721B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBinding", "..\MessageBinding\MessageBinding\MessageBinding.csproj", "{FD7201AB-AD25-48D5-8C86-93BED3823C54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -135,6 +137,30 @@ Global
 		{E3B2CECC-DFAC-47C4-9792-ABBE2735721B}.Release|iPhone.Build.0 = Release|Any CPU
 		{E3B2CECC-DFAC-47C4-9792-ABBE2735721B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{E3B2CECC-DFAC-47C4-9792-ABBE2735721B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Release|iPhone.Build.0 = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +170,7 @@ Global
 		{40D24072-75A1-4511-8D1A-33DD1897CF80} = {8795BBC2-2A83-401D-9E2D-04792031E1E6}
 		{92469145-454A-4F95-83D4-B71BED7A4930} = {8795BBC2-2A83-401D-9E2D-04792031E1E6}
 		{E3B2CECC-DFAC-47C4-9792-ABBE2735721B} = {8795BBC2-2A83-401D-9E2D-04792031E1E6}
+		{FD7201AB-AD25-48D5-8C86-93BED3823C54} = {DCF07324-9957-4D11-A86A-1679C7B7E8A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4DA8A20-C72E-4004-A0F0-30DCD23B9418}

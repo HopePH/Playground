@@ -1,6 +1,8 @@
 ﻿using Com.Example.Arithmetic;
+using System;
+using Utility;
 using Xamarin.Forms;
-using XamarinBindings.Utility;
+
 
 [assembly: Dependency(typeof(XamarinBindings.Droid.DependencyService.CalculatorUtility))]
 namespace XamarinBindings.Droid.DependencyService
@@ -42,5 +44,6 @@ namespace XamarinBindings.Droid.DependencyService
             javaDivide.Number2 = n2;
             return javaDivide.InvokeDivide();
         }
+
     }
 }

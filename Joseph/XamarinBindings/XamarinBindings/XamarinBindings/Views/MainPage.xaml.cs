@@ -1,12 +1,15 @@
 ﻿using System;
 using Xamarin.Forms;
 using XamarinBindings.Utility;
+using Utility;
 
 namespace XamarinBindings
 {
     public partial class MainPage : ContentPage
 	{
-		public MainPage()
+        public object CrossCurrentActivity { get; private set; }
+
+        public MainPage()
 		{
 			InitializeComponent();
 		}
@@ -46,9 +49,14 @@ namespace XamarinBindings
             result.Text = string.Empty;
         }
 
+        protected override void OnAppearing()
+        {
+            BtnClick.Clicked += BtnClick_Clicked;
+        }
+
         private void BtnClick_Clicked(object sender, EventArgs e)
         {
-
+            DependencyService.Get<IShowUtility>().ShowMessage();
         }
     }
 }
