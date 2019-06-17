@@ -17,6 +17,7 @@ namespace Calculator_Prism.ViewModels
 		{
 			int Sum = int.Parse(FirstNumber) + int.Parse(SecondNumber);
 			Total = Sum.ToString();
+			RaisePropertyChanged(nameof(Total));
 		}
 	}
 }
