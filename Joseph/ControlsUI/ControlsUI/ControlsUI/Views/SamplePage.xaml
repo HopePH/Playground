@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ControlsUI.Views.SamplePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:ControlsUI.Views;assembly=ControlsUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Button
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Text="Hello" />
+
+        <SearchBar
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            BackgroundColor="Azure">
+            <SearchBar.Effects>
+                <local:SearchBarNoBottomLineEffect />
+            </SearchBar.Effects>
+        </SearchBar>
+
+        <Entry
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Placeholder="Type Here" />
+
+        <Label
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Text="Long Message" />
+
+        <Button
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Text="Image View" />
+    </Grid>
+</ContentPage>

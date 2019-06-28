@@ -10,7 +10,7 @@
         <Label Text="Enter second number"/>
         <Entry Text="{Binding SecondNumber}"/>
         <Button Text="ADD" Command="{Binding AddCommand}"/>
-        <Label Text="{Binding Total, Mode=TwoWay}" BackgroundColor="Blue" TextColor="Yellow"/>
+        <Label Text="{Binding Total, Mode=TwoWay}"/>
     </StackLayout>
 
 </ContentPage>
