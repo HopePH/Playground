@@ -41,7 +41,7 @@ namespace ControlsUI
 		protected override void OnInitialized()
 		{
 			InitializeComponent();
-			NavigationService.NavigateAsync("NavigationPage/MainPage/SamplePage");
+			NavigationService.NavigateAsync("NavigationPage/SamplePage");
 		}
 	}
 }

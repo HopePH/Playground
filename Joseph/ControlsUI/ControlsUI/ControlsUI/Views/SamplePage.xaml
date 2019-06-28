@@ -19,6 +19,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
+
         <Button
             Grid.Row="0"
             Grid.ColumnSpan="2"
@@ -29,7 +30,7 @@
             Grid.ColumnSpan="2"
             BackgroundColor="Azure">
             <SearchBar.Effects>
-                <local:SearchBarNoBottomLineEffect />
+                <local:SearchBarCircularEdgeEffect />
             </SearchBar.Effects>
         </SearchBar>
 
