@@ -17,11 +17,6 @@ namespace ControlsUI.Droid.Effects
 				var myControl = Control;
 				myControl.SetBackgroundColor(XF.Color.Red.ToAndroid());
 				string temp = "";
-
-
-				int searchPlateId = myControl.Context.Resources.GetIdentifier("android:id/search_plate", null, null);
-				// Getting the 'search_plate' LinearLayout.
-				View searchPlate = myControl.FindViewById(searchPlateId);
 			}
 			catch (Exception ex)
 			{
