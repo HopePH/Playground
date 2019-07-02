@@ -3,11 +3,18 @@
     x:Class="ControlsUI.Views.SamplePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:local="clr-namespace:ControlsUI.Views;assembly=ControlsUI"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="#88299b"
+    NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
-    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <Grid
+        Margin="15,60,15,15"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="25"
+        VerticalOptions="FillAndExpand">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -23,12 +30,20 @@
         <Button
             Grid.Row="0"
             Grid.ColumnSpan="2"
-            Text="Hello" />
+            BackgroundColor="Transparent"
+            BorderColor="White"
+            BorderWidth="1"
+            CornerRadius="20"
+            Text="Hello"
+            TextColor="White">
+            
+        </Button>
 
         <SearchBar
             Grid.Row="1"
             Grid.ColumnSpan="2"
-            BackgroundColor="Azure">
+            Placeholder="Search"
+            TextColor="White">
             <SearchBar.Effects>
                 <local:SearchBarCircularEdgeEffect />
             </SearchBar.Effects>
@@ -37,16 +52,20 @@
         <Entry
             Grid.Row="2"
             Grid.ColumnSpan="2"
-            Placeholder="Type Here" />
+            Placeholder="Type Here"
+            PlaceholderColor="White"
+            TextColor="White" />
 
         <Label
             Grid.Row="3"
             Grid.ColumnSpan="2"
-            Text="Long Message" />
+            TextColor="White">
+            <Label.Text>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </Label.Text>
+        </Label>
 
-        <Button
-            Grid.Row="4"
-            Grid.ColumnSpan="2"
-            Text="Image View" />
+        <!--  https://github.com/jamesmontemagno/ImageCirclePlugin  -->
+        <controls:CircleImage Grid.Row="4" Source="https://i.pinimg.com/564x/b6/4e/a4/b64ea4e59843280df65addce3832d5c4.jpg" />
     </Grid>
 </ContentPage>

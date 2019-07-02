@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsUI.Android", "Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsUI.iOS", "ControlsUI\ControlsUI.iOS\ControlsUI.iOS.csproj", "{0DDC3438-A7E7-4653-9284-639DA03C043B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsUI", "ControlsUI\ControlsUI\ControlsUI.csproj", "{AEA420E8-28A5-48C1-BCC2-E5AB3989EBAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlsUI", "ControlsUI\ControlsUI\ControlsUI.csproj", "{AEA420E8-28A5-48C1-BCC2-E5AB3989EBAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

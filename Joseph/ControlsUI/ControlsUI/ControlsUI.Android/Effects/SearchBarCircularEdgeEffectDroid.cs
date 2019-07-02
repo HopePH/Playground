@@ -1,11 +1,13 @@
-﻿using Android.Views;
+﻿
 using ControlsUI.Views;
-using System;
 using Xamarin.Forms.Platform.Android;
-using XF = Xamarin.Forms;
+using Xamarin.Forms;
+using System;
+using Android.Widget;
+using System.Linq;
 
-[assembly: XF.ResolutionGroupName("ControlsUI")]
-[assembly: XF.ExportEffect(typeof(ControlsUI.Droid.Effects.SearchBarCircularEdgeEffectDroid), nameof(SearchBarCircularEdgeEffect))]
+[assembly: ResolutionGroupName("ControlsUI")]
+[assembly: ExportEffect(typeof(ControlsUI.Droid.Effects.SearchBarCircularEdgeEffectDroid), nameof(SearchBarCircularEdgeEffect))]
 namespace ControlsUI.Droid.Effects
 {
 	public class SearchBarCircularEdgeEffectDroid : PlatformEffect
@@ -14,9 +16,15 @@ namespace ControlsUI.Droid.Effects
 		{
 			try
 			{
-				var myControl = Control;
-				myControl.SetBackgroundColor(XF.Color.Red.ToAndroid());
-				string temp = "";
+				var control = Control as SearchView;
+				if (control == null) return;
+
+				var effect = (SearchBarCircularEdgeEffect)Element.Effects.FirstOrDefault(e => e is SearchBarCircularEdgeEffect);
+				if(effect != null)
+				{
+					if (!effect.IsApplyToDroid) return;
+					control.SetBackgroundResource(Resource.Drawable.RoundEdge);
+				}
 			}
 			catch (Exception ex)
 			{
@@ -26,7 +34,7 @@ namespace ControlsUI.Droid.Effects
 
 		protected override void OnDetached()
 		{
-			
+	
 		}
 	}
 }
