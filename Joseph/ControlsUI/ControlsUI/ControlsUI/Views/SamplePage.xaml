@@ -54,7 +54,11 @@
             Grid.ColumnSpan="2"
             Placeholder="Type Here"
             PlaceholderColor="White"
-            TextColor="White" />
+            TextColor="White">
+            <Entry.Effects>
+                <local:EntryColorEffect />
+            </Entry.Effects>
+        </Entry>
 
         <Label
             Grid.Row="3"
