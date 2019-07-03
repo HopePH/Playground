@@ -24,11 +24,15 @@ namespace ControlsUI.Droid.Effects
 				{
 					if (!effect.IsApplyToDroid) return;
 					control.SetBackgroundResource(Resource.Drawable.RoundEdge);
-				}
+                    int searchPlateId = control.Context.Resources.GetIdentifier("android:id/search_plate", null, null);
+                    Android.Views.View searchPlateView = control.FindViewById(searchPlateId);
+                    searchPlateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                }
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
+                Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
 			}
 		}
 
