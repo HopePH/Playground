@@ -1,5 +1,7 @@
 ﻿using Acr.UserDialogs;
+using Microsoft.Extensions.Caching.Memory;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.Forms;
@@ -10,11 +12,15 @@ namespace Caching
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MemoryCachePage : ContentPage
     {
+        private const string KEY = "ListItems";
+        private readonly IMemoryCache _memoryCache;
+
         public ObservableCollection<MakeUpFake> MakeUps { get; set; }
 
         public MemoryCachePage()
         {
             InitializeComponent();
+            _memoryCache = new MemoryCache(new MemoryCacheOptions());
             SetData();
         }
 
@@ -30,8 +36,9 @@ namespace Caching
 
                 if (!string.IsNullOrEmpty(json))
                 {
-                    var fakeItems = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Collections.Generic
-                        .IEnumerable<MakeUpFake>>(json);
+                    var fakeItems = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<MakeUpFake>>(json);
+                    _memoryCache.Set(KEY, fakeItems, DateTimeOffset.Now.AddMinutes(5));
+
                     MakeUps = new ObservableCollection<MakeUpFake>(fakeItems);
                     listView.ItemsSource = MakeUps;
                 }
@@ -48,7 +55,11 @@ namespace Caching
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            SetData();
+            //chito.comment this mem get to show caching works
+            if (_memoryCache.TryGetValue(KEY, out IEnumerable<MakeUpFake> value))
+                MakeUps = new ObservableCollection<MakeUpFake>(value);
+            else
+                SetData();
         }
     }
 }
