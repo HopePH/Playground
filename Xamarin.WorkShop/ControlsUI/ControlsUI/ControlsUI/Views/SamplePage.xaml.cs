@@ -1,4 +1,5 @@
 ﻿
+using Acr.UserDialogs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,5 +12,10 @@ namespace ControlsUI.Views
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void Button_Clicked(object sender, System.EventArgs e)
+        {
+            UserDialogs.Instance.Alert("Button was clicked");
+        }
+    }
 }
