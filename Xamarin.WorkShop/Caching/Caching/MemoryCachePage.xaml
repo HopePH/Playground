@@ -47,6 +47,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button Clicked="Button_Clicked" Text="RefreshItems" />
+            <Button Clicked="Button_Clicked_1" Text="Go Settings Plugin" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

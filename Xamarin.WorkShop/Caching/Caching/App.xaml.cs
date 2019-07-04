@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Caching
 {
@@ -9,7 +7,7 @@ namespace Caching
         public App()
         {
             InitializeComponent();
-            MainPage = new MemoryCachePage();
+            MainPage = new NavigationPage( new MemoryCachePage());
         }
 
         protected override void OnStart()
