@@ -34,6 +34,7 @@ namespace ControlsUI
 		{
 			containerRegistry.RegisterForNavigation<SamplePage>();
 			containerRegistry.RegisterForNavigation<NavigationPage>();
+			containerRegistry.RegisterForNavigation<SamplePageScratch>();
 
 		}
 
