@@ -1,10 +1,10 @@
-﻿
-using ControlsUI.Views;
+﻿using ControlsUI.Views;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
 using System;
 using Android.Widget;
 using System.Linq;
+using Plugin.CurrentActivity;
 
 [assembly: ResolutionGroupName("ControlsUI")]
 [assembly: ExportEffect(typeof(ControlsUI.Droid.Effects.SearchBarCircularEdgeEffectDroid), nameof(SearchBarCircularEdgeEffect))]
@@ -18,20 +18,40 @@ namespace ControlsUI.Droid.Effects
 			{
 				var control = Control as SearchView;
 				if (control == null) return;
-
 				var effect = (SearchBarCircularEdgeEffect)Element.Effects.FirstOrDefault(e => e is SearchBarCircularEdgeEffect);
+
 				if(effect != null)
 				{
 					if (!effect.IsApplyToDroid) return;
 					control.SetBackgroundResource(Resource.Drawable.RoundEdge);
 
+                    //search plate
                     int searchPlateId = control.Context.Resources.GetIdentifier("android:id/search_plate", null, null);
-                    Android.Views.View searchPlateView = control.FindViewById(searchPlateId);
-                    searchPlateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                    var searchPlateView = control.FindViewById(searchPlateId);
 
-                    var searchIconId = control.Context.Resources.GetIdentifier("android:id/search_icon", null, null);
-                    Android.Views.View searchIconView = control.FindViewById(searchIconId);
-                    searchIconView.SetBackgroundColor(Android.Graphics.Color.White);
+                    if (searchPlateView != null)
+                        searchPlateView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                    //search icon color
+                    var searchIconId = control.Context.Resources.GetIdentifier("android:id/search_mag_icon", null, null);
+                    var searchIconView = (ImageView) control.FindViewById(searchIconId);
+                    var context = CrossCurrentActivity.Current.Activity;
+
+                    if (searchIconView != null)
+                    {
+                        var drawable = context.GetDrawable(Resource.Drawable.searchw);
+                        searchIconView.SetImageDrawable(drawable);
+                    }
+
+                    //hint color
+                    var srcTextId = control.Context.Resources.GetIdentifier("android:id/search_src_text", null, null);
+                    var searchSourceText = (EditText) control.FindViewById(srcTextId);
+
+                    if (searchSourceText != null)
+                    {
+                        searchSourceText.SetHintTextColor(Color.White.ToAndroid());
+                        searchSourceText.SetTextColor(Color.White.ToAndroid());
+                    }
                 }
 			}
 			catch (Exception ex)

@@ -32,7 +32,6 @@ namespace ControlsUI
 
 		protected override void RegisterTypes(IContainerRegistry containerRegistry)
 		{
-			containerRegistry.RegisterForNavigation<MainPage>();
 			containerRegistry.RegisterForNavigation<SamplePage>();
 			containerRegistry.RegisterForNavigation<NavigationPage>();
 

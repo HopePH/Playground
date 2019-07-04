@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMVVM.Android", "BasicM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMVVM.iOS", "BasicMVVM\BasicMVVM.iOS\BasicMVVM.iOS.csproj", "{D92CA16B-72FD-4E5A-9784-00E538DF3ECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMVVM", "BasicMVVM\BasicMVVM\BasicMVVM.csproj", "{FD6DF767-5DE8-4032-BF45-458B9CCEA8F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicMVVM", "BasicMVVM\BasicMVVM\BasicMVVM.csproj", "{FD6DF767-5DE8-4032-BF45-458B9CCEA8F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocalCaching", "LocalCaching", "{AD1DC056-C355-4B4A-897A-3A734E0D5B04}"
 EndProject
@@ -25,7 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Android", "Caching\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.iOS", "Caching\Caching.iOS\Caching.iOS.csproj", "{B193D5CD-DBD8-44E1-8C83-86D7C6C0E109}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching", "Caching\Caching\Caching.csproj", "{CAC60143-7368-4FCA-ABF5-F72FED260B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching", "Caching\Caching\Caching.csproj", "{CAC60143-7368-4FCA-ABF5-F72FED260B29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Items", "_Items", "{15D0DEF0-C329-4440-8B36-8FF69E4AB336}"
+	ProjectSection(SolutionItems) = preProject
+		Impt.txt = Impt.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
