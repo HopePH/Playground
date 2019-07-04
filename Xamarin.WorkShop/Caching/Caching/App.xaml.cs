@@ -9,8 +9,7 @@ namespace Caching
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new MemoryCachePage();
         }
 
         protected override void OnStart()
