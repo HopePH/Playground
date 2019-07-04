@@ -10,70 +10,68 @@
     BackgroundColor="#88299b"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
-    <Grid
-        Margin="15,60,15,15"
-        HorizontalOptions="FillAndExpand"
-        RowSpacing="25"
-        VerticalOptions="FillAndExpand">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid
+            Margin="15,20,15,15"
+            HorizontalOptions="FillAndExpand"
+            RowSpacing="25"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <Button
-            Grid.Row="0"
-            Grid.ColumnSpan="2"
-            BackgroundColor="Transparent"
-            BorderColor="White"
-            BorderWidth="1"
-            Clicked="Button_Clicked"
-            CornerRadius="20"
-            Text="Hello"
-            TextColor="White" />
+            <Button
+                Grid.Row="0"
+                BackgroundColor="Transparent"
+                BorderColor="White"
+                BorderWidth="1"
+                Clicked="Button_Clicked"
+                CornerRadius="20"
+                Text="Hello"
+                TextColor="White" />
 
-        <SearchBar
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Placeholder="Search"
-            TextColor="White">
-            <SearchBar.Effects>
-                <local:SearchBarCircularEdgeEffect />
-            </SearchBar.Effects>
-        </SearchBar>
+            <SearchBar
+                Grid.Row="1"
+                Placeholder="Search"
+                TextColor="White">
+                <SearchBar.Effects>
+                    <local:SearchBarCircularEdgeEffect />
+                </SearchBar.Effects>
+            </SearchBar>
 
-        <Entry
-            Grid.Row="2"
-            Grid.ColumnSpan="2"
-            Placeholder="Type Here"
-            PlaceholderColor="White"
-            TextColor="White">
-            <Entry.Effects>
-                <local:EntryColorEffect />
-            </Entry.Effects>
-        </Entry>
+            <Entry
+                Grid.Row="2"
+                Placeholder="Type Here"
+                PlaceholderColor="White"
+                TextColor="White">
+                <Entry.Effects>
+                    <local:EntryColorEffect />
+                </Entry.Effects>
+            </Entry>
 
-        <Label
-            Grid.Row="3"
-            Grid.ColumnSpan="2"
-            TextColor="White">
-            <Label.Text>
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-            </Label.Text>
-        </Label>
+            <Label Grid.Row="3" TextColor="White">
+                <Label.Text>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </Label.Text>
+            </Label>
 
-        <!--  https://github.com/jamesmontemagno/ImageCirclePlugin  -->
-        <controls:CircleImage
-            Grid.Row="4"
-            Aspect="AspectFill"
-            HeightRequest="200"
-            Source="https://i.pinimg.com/564x/b6/4e/a4/b64ea4e59843280df65addce3832d5c4.jpg"
-            WidthRequest="200" />
-    </Grid>
+            <!--  https://github.com/jamesmontemagno/ImageCirclePlugin  -->
+            <controls:CircleImage
+                Grid.Row="4"
+                Aspect="AspectFill"
+                HeightRequest="400"
+                Source="https://i.pinimg.com/564x/b6/4e/a4/b64ea4e59843280df65addce3832d5c4.jpg"
+                WidthRequest="400" />
+
+            <Slider
+                Grid.Row="5"
+                Margin="0,0,0,40"
+                HorizontalOptions="FillAndExpand" />
+        </Grid>
+    </ScrollView>
 </ContentPage>
