@@ -1,0 +1,11 @@
+alfon
+	prepare local caching docs ppt
+
+joseph
+	prepare ui docs ppt
+		xamarin forms controls
+		effects
+		custom renderers
+
+alfie
+	prepare of mvvm docs ppt

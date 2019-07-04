@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinBindings"
+             x:Class="XamarinBindings.MainPage">
+
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Entry x:Name="num1" Placeholder="Enter first number" Grid.Row="0" Grid.ColumnSpan="2" Keyboard="Numeric">
+            <Entry.Behaviors>
+                <local:EnrtyLenghtValidationBehaviors MaxLenght="8"/>
+            </Entry.Behaviors>
+        </Entry>
+        <Entry x:Name="num2" Placeholder="Enter second number" Grid.Row="1" Grid.ColumnSpan="2" Keyboard="Numeric">
+            <Entry.Behaviors>
+                <local:EnrtyLenghtValidationBehaviors MaxLenght="8"/>
+            </Entry.Behaviors>
+        </Entry>
+        <Entry x:Name="result" Placeholder="Answer" Grid.Row="2" Grid.ColumnSpan="2" InputTransparent="True"/>
+        <Button x:Name="BtnAdd" Text="ADD" Grid.Row="3" Grid.Column="0" Clicked="BtnAdd_Clicked"/>
+        <Button x:Name="BtnSub" Text="SUB" Grid.Row="3" Grid.Column="1" Clicked="BtnSub_Clicked"/>
+        <Button x:Name="BtnMul" Text="MULTIPLY" Grid.Row="4" Grid.Column="0" Clicked="BtnMul_Clicked"/>
+        <Button x:Name="BtnDiv" Text="DIVIDE" Grid.Row="4" Grid.Column="1" Clicked="BtnDiv_Clicked"/>
+        <Button x:Name="BtnClear" Text="CLEAR" Grid.Row="5" Grid.Column="0" Clicked="BtnClear_Clicked"/>
+        <Button x:Name="BtnClick" Text="CLICK ME!" Grid.Row="5" Grid.Column="1" Clicked="BtnClick_Clicked"/>
+
+    </Grid>
+</ContentPage>
