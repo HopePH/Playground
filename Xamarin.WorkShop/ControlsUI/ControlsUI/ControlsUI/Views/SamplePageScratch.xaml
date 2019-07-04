@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ControlsUI.Views.SamplePageScratch"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="White"
+    mc:Ignorable="d">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Text="Hello" />
+
+            <SearchBar Grid.Row="1" Placeholder="Search" />
+
+            <Entry Grid.Row="2" Placeholder="Type here" />
+
+            <Label Grid.Row="3" />
+
+            <Image
+                Grid.Row="4"
+                HeightRequest="400"
+                Source="https://i.pinimg.com/564x/b6/4e/a4/b64ea4e59843280df65addce3832d5c4.jpg"
+                WidthRequest="400" />
+
+            <Slider Grid.Row="5" Margin="0,0,0,40" />
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

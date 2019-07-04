@@ -1,12 +1,15 @@
 ﻿using System;
 using Xamarin.Forms;
 using XamarinBindings.Utility;
+using Utility;
 
 namespace XamarinBindings
 {
     public partial class MainPage : ContentPage
 	{
-		public MainPage()
+        public object CrossCurrentActivity { get; private set; }
+
+        public MainPage()
 		{
 			InitializeComponent();
 		}
@@ -46,9 +49,42 @@ namespace XamarinBindings
             result.Text = string.Empty;
         }
 
+        protected override void OnAppearing()
+        {
+            BtnClick.Clicked += BtnClick_Clicked;
+        }
+
         private void BtnClick_Clicked(object sender, EventArgs e)
         {
+            DependencyService.Get<IShowUtility>().ShowMessage();
+        }
+    }
 
+    public class EnrtyLenghtValidationBehaviors : Behavior<Entry>
+    {
+        public int MaxLenght { get; set; }
+
+        protected override void OnAttachedTo(Entry bindable)
+        {
+            base.OnAttachedTo(bindable);
+            bindable.TextChanged += OnEntryTextChanged;
+        }
+
+        protected override void OnDetachingFrom(Entry bindable)
+        {
+            base.OnDetachingFrom(bindable);
+            bindable.TextChanged -= OnEntryTextChanged;
+        }
+
+        void OnEntryTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var entry = (Entry)sender;
+            if(entry.Text.Length > this.MaxLenght)
+            {
+                string entryText = entry.Text;
+                entryText = entryText.Remove(entryText.Length - 1);
+                entry.Text = entryText;
+            }
         }
     }
 }

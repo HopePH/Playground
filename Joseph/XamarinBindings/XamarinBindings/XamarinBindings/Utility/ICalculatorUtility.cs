@@ -1,4 +1,4 @@
-﻿namespace XamarinBindings.Utility
+﻿namespace Utility
 {
     public interface ICalculatorUtility
     {
