@@ -7,8 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <StackLayout>
+        <!--<Label x:Name="customerresult" Text="{Binding CustomerInfo.FirstName}" />-->
         <Label x:Name="lblResult" Text="{Binding Result}" />
         <Button Clicked="Button_Clicked" Text="Bind Math" />
+
+        <!--<Button Command="{Binding MathCommand}" Text="Bind Math" />-->
         <!--  Command="{Binding MathCommand}"  -->
         <!--  Clicked="Button_Clicked"  -->
     </StackLayout>
