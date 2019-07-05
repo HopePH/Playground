@@ -111,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ControlsUI\ControlsUI.csproj">
-      <Project>{AEA420E8-28A5-48C1-BCC2-E5AB3989EBAF}</Project>
+      <Project>{2F3D29F4-A3DC-45E6-A1F0-5B0B4F1F5C56}</Project>
       <Name>ControlsUI</Name>
     </ProjectReference>
   </ItemGroup>

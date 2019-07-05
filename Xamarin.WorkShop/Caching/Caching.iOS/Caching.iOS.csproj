@@ -136,7 +136,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Caching\Caching.csproj">
-      <Project>{F5D93534-AFE9-4DB8-AD77-FD4D1EE5C319}</Project>
+      <Project>{CAC60143-7368-4FCA-ABF5-F72FED260B29}</Project>
       <Name>Caching</Name>
     </ProjectReference>
   </ItemGroup>
