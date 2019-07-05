@@ -25,7 +25,6 @@ namespace BasicMVVM.FakeData
                     FirstName = "Chito",
                     LastName = "Salaño"
                 }
-
             };
 
         }

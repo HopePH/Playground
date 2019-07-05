@@ -1,7 +1,6 @@
 ﻿using BasicMVVM.FakeData;
 using BasicMVVM.Model;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -20,7 +19,7 @@ namespace BasicMVVM
 
         public MainPageViewModel()
         {
-            GetCustumerDetails();
+            //GetCustumerDetails();
         }
 
         private void GenerateRandomNo()
