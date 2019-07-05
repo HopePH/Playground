@@ -7,7 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <StackLayout>
-        <Label Text="{Binding Result}" />
-        <Button Command="{Binding MathCommand}" Text="Bind Math" />
+        <Label x:Name="lblResult" Text="{Binding Result}" />
+        <Button Clicked="Button_Clicked" Text="Bind Math" />
+        <!--  Command="{Binding MathCommand}"  -->
+        <!--  Clicked="Button_Clicked"  -->
     </StackLayout>
 </ContentPage>

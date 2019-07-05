@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace BasicMVVM
@@ -12,6 +13,22 @@ namespace BasicMVVM
         {
             InitializeComponent();
             BindingContext = new MainPageViewModel();
+        }
+
+        private void Button_Clicked(object sender, System.EventArgs e)
+            => GenerateRandomNo();
+
+        private void GenerateRandomNo()
+        {
+            int resultDouble = RandomNumber(1, 1000000);
+            string res = $"My generated no: {resultDouble.ToString()}";
+            lblResult.Text = res; 
+        }
+
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
         }
     }
 }
