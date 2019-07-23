@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMessage.Android", "Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMessage.iOS", "SimpleMessage\SimpleMessage.iOS\SimpleMessage.iOS.csproj", "{E8CAB434-9629-4D0F-9B5A-D58A1191FCA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMessage", "SimpleMessage\SimpleMessage\SimpleMessage.csproj", "{58D6170D-DEC0-41DC-969E-88F233C69A8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessage", "SimpleMessage\SimpleMessage\SimpleMessage.csproj", "{58D6170D-DEC0-41DC-969E-88F233C69A8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Native", "Native", "{A9666D0F-AF12-4485-B9ED-5A8A269A8EAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBinding", "..\..\_Work.Dir.Playground\Playground\Joseph\MessageBinding\MessageBinding\MessageBinding.csproj", "{FD7201AB-AD25-48D5-8C86-93BED3823C54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBinding", "..\MessageBinding\MessageBinding\MessageBinding.csproj", "{FD7201AB-AD25-48D5-8C86-93BED3823C54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

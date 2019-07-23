@@ -1,8 +1,8 @@
-﻿using Com.Example.Message;
-using Plugin.CurrentActivity;
+﻿using Plugin.CurrentActivity;
 using SimpleMessage.Utility;
 using Xamarin.Forms;
 using System;
+using Com.Example.Message;
 
 [assembly: Dependency(typeof(SimpleMessage.Droid.DependencyService.MessageUtility))]
 namespace SimpleMessage.Droid.DependencyService

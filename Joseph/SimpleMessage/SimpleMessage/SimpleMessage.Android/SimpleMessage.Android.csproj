@@ -102,7 +102,7 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\_Work.Dir.Playground\Playground\Joseph\MessageBinding\MessageBinding\MessageBinding.csproj">
+    <ProjectReference Include="..\..\..\MessageBinding\MessageBinding\MessageBinding.csproj">
       <Project>{FD7201AB-AD25-48D5-8C86-93BED3823C54}</Project>
       <Name>MessageBinding</Name>
     </ProjectReference>
