@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -26,7 +22,6 @@ namespace ControlsUI.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
-
             return base.FinishedLaunching(app, options);
         }
     }
