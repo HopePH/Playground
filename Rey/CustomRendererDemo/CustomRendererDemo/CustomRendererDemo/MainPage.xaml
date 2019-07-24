@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CustomRendererDemo.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customControls="clr-namespace:CustomRendererDemo.CustomControls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackLayout
+        HorizontalOptions="CenterAndExpand"
+        Spacing="20"
+        VerticalOptions="CenterAndExpand">
+
+        <Entry
+            BackgroundColor="#F7F7F7"
+            Placeholder="Xamarin.Forms Entry"
+            PlaceholderColor="Gray"
+            VerticalOptions="Center" />
+
+        <customControls:ExtendedEntry
+            BackgroundColor="#F7F7F7"
+            Placeholder="Extended Entry"
+            PlaceholderColor="Gray"
+            VerticalOptions="Center" />
+
+    </StackLayout>
+
+</ContentPage>
