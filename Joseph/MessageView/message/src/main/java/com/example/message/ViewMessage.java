@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import static android.support.v4.util.Preconditions.checkNotNull;
 
+
 public class ViewMessage {
     private final Context _context;
     private String _message;
@@ -24,11 +25,11 @@ public class ViewMessage {
             if (this._context != null) {
                 if (isToast)
                     try {
-                        Toast.makeText(this._context, "Thank you Message!", Toast.LENGTH_SHORT).show();
-                    }
-                    catch (RuntimeException re){
-                        if (!re.getMessage().contains("not mocked")) throw re;
-                    }
+                    Toast.makeText(this._context, "Thank you Message!", Toast.LENGTH_SHORT).show();
+                }
+                catch (RuntimeException re){
+                    if (!re.getMessage().contains("not mocked")) throw re;
+                }
                 else {
                     try {
                         AlertDialog alertDialog = new AlertDialog.Builder(this._context).create();

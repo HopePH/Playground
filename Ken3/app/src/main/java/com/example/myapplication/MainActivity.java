@@ -16,6 +16,6 @@ public class MainActivity extends AppCompatActivity {
     public void toastDisplay(View view)
     {
         DisplayToast displayToast = new DisplayToast(this);
-        displayToast.showToast();
+        displayToast.showToast(true);
     }
 }
