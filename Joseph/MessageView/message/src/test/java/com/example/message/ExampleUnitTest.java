@@ -17,7 +17,7 @@ public class ExampleUnitTest {
     public void testShowToast() {
         ViewMessage viewMessage = new ViewMessage(mockContext);
         viewMessage.MessageView(true);
-        assertEquals("Message success!",viewMessage.getMessage());
+        assertEquals("Message success!", viewMessage.getMessage());
     }
 
 }
