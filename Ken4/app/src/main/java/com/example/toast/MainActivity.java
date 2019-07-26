@@ -1,8 +1,11 @@
 package com.example.toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+
+import com.example.toastlibrary2.DisplayToast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void btnToast()
+    public void btnToast(View view)
     {
-
+        DisplayToast displayToast = new DisplayToast(this);
+        displayToast.showToast(true);
     }
 }
