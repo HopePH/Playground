@@ -5,14 +5,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 
 public class DisplayToast
 {
-    private Context _context;
+    private final Context _context;
     private String _message;
 
     public DisplayToast(@NonNull Context _context)
     {
+        checkNotNull(_context,"Error!");
         this._context = _context;
     }
 
@@ -22,25 +25,28 @@ public class DisplayToast
         {
             if (_context != null)
             {
-                try
+                if (isToast)
                 {
-                    Toast.makeText(_context,"Hello World!",Toast.LENGTH_SHORT).show();
+                    try
+                    {
+                        Toast.makeText(_context, "Hello World!", Toast.LENGTH_SHORT).show();
+                    }
+                    catch (RuntimeException re){
+                        if (!re.getMessage().contains("not mocked")) throw re;
+                    }
+                    this._message = "Success!";
                 }
-                catch (RuntimeException re)
-                {
-                    if (!re.getMessage().contains("Not Mocked")) throw re;
-                }
-                this._message = "Success!";
             }
         }
-        catch (Exception e)
+        catch (RuntimeException e)
         {
             this._message = e.getMessage();
         }
     }
-
     public String getMessage()
     {
         return this._message;
     }
+
+
 }
