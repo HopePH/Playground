@@ -3,13 +3,18 @@ package com.example.toastlibrary;
 import android.content.Context;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class DisplayToast
 {
     private Context _context;
     private String _message;
 
-    public DisplayToast(Context context)
+    public DisplayToast(@NonNull Context context)
     {
+        checkNotNull(context,"Error in context!");
         this._context = context;
     }
     public void showToast()
