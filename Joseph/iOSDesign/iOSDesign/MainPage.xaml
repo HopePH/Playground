@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:iOSDesign.Views;assembly=iOSDesign"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" 
+    x:Class="iOSDesign.Views.MainPage"
+    BackgroundColor="Gray">
+    <Grid 
+        HorizontalOptions="FillAndExpand " 
+        VerticalOptions="FillAndExpand"
+        Margin="10,200,10,10"
+        RowSpacing="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <SearchBar
+        Grid.Row="0"
+        Placeholder="Search"
+        PlaceholderColor="Black">
+            <SearchBar.Effects>
+                <local:SearchBarEffect />
+            </SearchBar.Effects>
+        </SearchBar>
+        <Entry
+            Grid.Row="1"
+        Placeholder="Entry"
+        PlaceholderColor="Black">
+            <Entry.Effects>
+                <local:EntryEffect/>
+            </Entry.Effects>
+        </Entry>
+    </Grid>
+</ContentPage>
