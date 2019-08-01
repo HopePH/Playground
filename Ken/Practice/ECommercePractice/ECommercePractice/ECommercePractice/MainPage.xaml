@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ECommercePractice.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="#ADCBE3"
+    mc:Ignorable="d">
+
+    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <StackLayout>
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="300"
+                Source="https://a0a73a99cbfedf7e3b28-a6fed8c1b4fb343f790cc1a783af6690.ssl.cf3.rackcdn.com/content_images/luxury-watches/luxury-watches-mens-2.jpg" />
+            <!--  Social Media frame  -->
+            <Frame Margin="10,0,10,0">
+                <Grid>
+                    <StackLayout
+                        Grid.Column="0"
+                        Padding="0"
+                        Orientation="Horizontal">
+                        <ImageButton
+                            HeightRequest="20"
+                            Source="https://www.sccpre.cat/mypng/full/185-1855242_pink-heart-icon-png-transparent-heart-clipart.png"
+                            WidthRequest="20" />
+                        <Label Text="Add to Wishlist" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        Orientation="Horizontal">
+                        <ImageButton
+                            HeightRequest="20"
+                            Source="https://image.flaticon.com/icons/png/128/179/179319.png"
+                            WidthRequest="20" />
+                        <ImageButton
+                            HeightRequest="20"
+                            Source="https://khabari.org/static/images/twitter-icon.png"
+                            WidthRequest="20" />
+                        <ImageButton
+                            HeightRequest="20"
+                            Source="https://stanfordpolitics.org/wp-content/uploads/2013/01/insta3-copy.png"
+                            WidthRequest="20" />
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <!--  Item Description frame  -->
+            <Frame Margin="10,0,10,3">
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                            Grid.Column="0"
+                            HorizontalOptions="Start"
+                            Orientation="Vertical">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text="₱ 35,000"
+                                TextColor="#2A4D69" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                Text="Swiss Luxury Watch"
+                                TextColor="Black" />
+                            <Label
+                                FontAttributes="Italic"
+                                FontSize="12"
+                                Text="Swiss Luxury Watch"
+                                TextColor="Gray" />
+                        </StackLayout>
+                        <Button
+                            Grid.Column="1"
+                            Padding="3"
+                            BackgroundColor="#4B86B4"
+                            CornerRadius="25"
+                            HorizontalOptions="End"
+                            Text="+ ADD TO CART"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+                    </Grid>
+                    <BoxView
+                        Grid.Row="1"
+                        Margin="5"
+                        HeightRequest="0.7"
+                        Color="#2A4D69" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        Text="Item Description"
+                        TextColor="#2A4D69" />
+                    <Label FontSize="11" TextColor="Gray">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </Label>
+                    <StackLayout Margin="0,20,0,5" Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            Text="Available colors: "
+                            TextColor="#2A4D69" />
+                        <BoxView
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            Color="#2563EB" />
+                        <BoxView
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            Color="Red" />
+                        <BoxView
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            Color="Black" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!--  Reviews frame  -->
+            <Frame Margin="10,0,10,3">
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        Text="Reviews (1234)"
+                        TextColor="#2A4D69" />
+                    <BoxView
+                        Grid.Row="1"
+                        Margin="5"
+                        HeightRequest="0.7"
+                        Color="#2A4D69" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="10"
+                        Text="customerName"
+                        TextColor="#2A4D69" />
+                    <Label FontSize="11" TextColor="Gray">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </Label>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="10"
+                        Text="customerName"
+                        TextColor="#2A4D69" />
+                    <Label FontSize="11" TextColor="Gray">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
