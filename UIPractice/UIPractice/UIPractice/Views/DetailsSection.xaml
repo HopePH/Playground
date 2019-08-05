@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="UIPractice.Views.DetailsSection"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Scale=".7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                x:Name="InfoTab"
+                Grid.Column="0"
+                Text="Info">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="CastTab"
+                Grid.Column="1"
+                Text="Cast">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="NewsTab"
+                Grid.Column="2"
+                Text="News">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="CriticsTab"
+                Grid.Column="3"
+                Text="Critics">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="MediaTab"
+                Grid.Column="4"
+                Text="Media">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <Grid
+            x:Name="InfoContent"
+            Grid.Row="2"
+            IsVisible="True"
+            Opacity="1">
+            <Label Margin="10" Text="{Binding Info}" />
+        </Grid>
+        <Grid
+            x:Name="MediaContent"
+            Grid.Row="2"
+            IsVisible="False"
+            Opacity="1">
+            <Label Margin="10" Text="ASD" />
+        </Grid>
+    </Grid>
+</ContentView>

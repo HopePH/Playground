@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UIPractice.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    xmlns:view="clr-namespace:UIPractice.Views"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Aspect="AspectFill"
+            HeightRequest="200"
+            Source="{Binding BackDropUrl}" />
+
+        <Image BackgroundColor="White" VerticalOptions="End" />
+
+        <Grid
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Margin="14,172,14,0"
+            ColumnSpacing="0"
+            IsClippedToBounds="True"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="138" />
+                <RowDefinition Height="46" />
+                <RowDefinition Height="46" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <BoxView
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="white"
+                CornerRadius="6,6,0,0" />
+
+            <BoxView
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Green"
+                CornerRadius="0,0,6,6" />
+            <Label
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                Text="ADD YOUR RATING"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <skia:SKCanvasView
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                PaintSurface="SKCanvasView_PaintSurface" />
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="14,0,0,0" VerticalOptions="Center">
+                    <Label Text="{Binding Title}" />
+                    <Label Text="{Binding ReleaseDate}" />
+                </StackLayout>
+
+                <BoxView
+                    Margin="0,0,14,0"
+                    HeightRequest=".5"
+                    VerticalOptions="End"
+                    Color="Black" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Margin="14,0,0,0" VerticalOptions="Center">
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="{Binding AudienceScore, StringFormat='{0:}%'}" />
+                        </StackLayout>
+                        <Label FontSize="10" Text="Audience" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Column="1"
+                        Margin="14,0,0,0"
+                        VerticalOptions="Center">
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="{Binding AudienceScore, StringFormat='{0:}%'}" />
+                        </StackLayout>
+                        <Label FontSize="10" Text="Tomato Meter" />
+                    </StackLayout>
+                </Grid>
+            </Grid>
+            <view:DetailsSection
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Margin="0,0,0,14" />
+        </Grid>
+        <pancake:PancakeView
+            Grid.RowSpan="2"
+            Margin="28,126,0,0"
+            CornerRadius="20"
+            HeightRequest="170"
+            HorizontalOptions="Start"
+            IsClippedToBounds="True"
+            VerticalOptions="Start"
+            WidthRequest="125">
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="170"
+                HorizontalOptions="Start"
+                Source="{Binding PosterUrl}"
+                VerticalOptions="Start"
+                WidthRequest="125" />
+        </pancake:PancakeView>
+    </Grid>
+</ContentPage>
