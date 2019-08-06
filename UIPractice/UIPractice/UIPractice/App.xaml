@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="UIPractice.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <Color x:Key="SubTextColor">#B9BCC3</Color>
+        <Color x:Key="MainTextColor">#006400</Color>
+
+        <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String">
+            <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+        </OnPlatform>
+        <OnPlatform x:Key="BoldFont" x:TypeArguments="x:String">
+            <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans" />
+        </OnPlatform>
+
+        <Style x:Key="TabLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="{StaticResource SubTextColor}" />
+        </Style>
+        <Style x:Key="SelectedTabLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+        </Style>
+    </Application.Resources>
+</Application>

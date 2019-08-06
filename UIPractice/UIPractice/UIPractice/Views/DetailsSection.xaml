@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="UIPractice.Views.DetailsSection"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:UIPractice.Data"
+    mc:Ignorable="d">
+    <Grid Scale=".7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                x:Name="InfoTab"
+                Grid.Column="0"
+                Text="Info">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="CastTab"
+                Grid.Column="1"
+                Text="Cast">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="NewsTab"
+                Grid.Column="2"
+                Text="News">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="CriticsTab"
+                Grid.Column="3"
+                Text="Critics">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="MediaTab"
+                Grid.Column="4"
+                Text="Media">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <BoxView
+            Grid.Row="1"
+            HeightRequest="1"
+            VerticalOptions="Center"
+            Color="{StaticResource SubTextColor}" />
+        <BoxView
+            x:Name="SelectionUnderline"
+            Grid.Row="1"
+            CornerRadius="2"
+            HeightRequest="5"
+            HorizontalOptions="Start"
+            WidthRequest="40"
+            Color="Green" />
+
+        <Grid
+            x:Name="InfoContent"
+            Grid.Row="2"
+            IsVisible="True"
+            Opacity="1">
+            <Label
+                Margin="10"
+                Style="{Binding SelectedTabLabel}"
+                Text="{Binding Info}" />
+        </Grid>
+        <Grid
+            x:Name="CastContent"
+            Grid.Row="2"
+            IsVisible="True"
+            Opacity="0">
+
+            <ListView HasUnevenRows="True" ItemsSource="{Binding Cast}">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type model:CastMember}">
+                        <model:CastMember Name="Ken" Role="Ken" />
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <controls:CircleImage
+                                    Aspect="AspectFill"
+                                    HeightRequest="60"
+                                    Source="{Binding ImageUrl}"
+                                    WidthRequest="60" />
+
+                                <StackLayout Grid.Column="1">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        Text="{Binding Name}" />
+                                    <Label FontSize="12" Text="{Binding Role}" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+        <Grid
+            x:Name="NewsContent"
+            Grid.Row="2"
+            IsVisible="False"
+            Opacity="0">
+            <Label
+                Margin="10"
+                Style="{Binding TabLabel}"
+                Text="{Binding News}" />
+        </Grid>
+        <Grid
+            x:Name="CriticsContent"
+            Grid.Row="2"
+            IsVisible="False"
+            Opacity="0">
+            <Label
+                Margin="10"
+                Style="{Binding TabLabel}"
+                Text="{Binding Critics}" />
+        </Grid>
+        <Grid
+            x:Name="MediaContent"
+            Grid.Row="2"
+            IsVisible="False"
+            Opacity="0">
+            <Label
+                Margin="10"
+                Style="{Binding TabLabel}"
+                Text="{Binding Media}" />
+        </Grid>
+    </Grid>
+</ContentView>
