@@ -71,8 +71,11 @@
                 </Grid.RowDefinitions>
 
                 <StackLayout Margin="14,0,0,0" VerticalOptions="Center">
-                    <Label Text="{Binding Title}" />
-                    <Label Text="{Binding ReleaseDate}" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="{Binding Title}" />
+                    <Label FontSize="15" Text="{Binding ReleaseDate}" />
                 </StackLayout>
 
                 <BoxView
@@ -88,7 +91,7 @@
 
                     <StackLayout Margin="14,0,0,0" VerticalOptions="Center">
                         <StackLayout Orientation="Horizontal">
-
+                            <Image HeightRequest="20" Source="https://www.clipartmax.com/png/full/161-1616544_popcorn-icon-cinema-flat-icon-png.png" />
                             <Label Text="{Binding AudienceScore, StringFormat='{0:}%'}" />
                         </StackLayout>
                         <Label FontSize="10" Text="Audience" />
@@ -98,7 +101,7 @@
                         Margin="14,0,0,0"
                         VerticalOptions="Center">
                         <StackLayout Orientation="Horizontal">
-
+                            <Image HeightRequest="20" Source="https://thumbs.dreamstime.com/b/flat-icon-tomato-vegetable-leaf-vector-illustration-112706293.jpg" />
                             <Label Text="{Binding AudienceScore, StringFormat='{0:}%'}" />
                         </StackLayout>
                         <Label FontSize="10" Text="Tomato Meter" />

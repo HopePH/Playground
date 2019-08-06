@@ -35,7 +35,7 @@ namespace UIPractice
 
             using (SKPaint paint = new SKPaint())
             {
-                SKColor shadowColor = Color.FromHex("#F7F7F7").ToSKColor();
+                SKColor shadowColor = Color.FromHex("#5ACB6E").ToSKColor();
 
                 paint.IsDither = true;
                 paint.IsAntialias = true;
