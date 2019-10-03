@@ -23,3 +23,7 @@ steps:
     modifyOutputPath: false
     arguments: --output $(Build.PublishPipelineArtifact)
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'Calculator'
