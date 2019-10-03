@@ -6,7 +6,7 @@ pool:
 
 variables:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  solution: '**/DevOps.WinApp/*.sln'
+  solution: '**/Playground/DevOps.WinApp/DotNetConf.sln'
   buildConfiguration: 'Release'
 
 steps:
