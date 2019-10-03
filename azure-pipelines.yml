@@ -21,7 +21,7 @@ steps:
     publishWebProjects: false
     zipAfterPublish: false
     modifyOutputPath: false
-    projects: 'Playground/DevOps.WinApp/DotNetConf/DotNetConf.csproj'
+    projects: 'DevOps.WinApp/DotNetConf/DotNetConf.csproj'
     arguments: --output $(Build.ArtifactStagingDirectory)
 
 - task: PublishPipelineArtifact@1
