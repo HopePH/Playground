@@ -6,7 +6,7 @@ pool:
 
 variables:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  solution: '**/DevOps.WinApp/*.sln'
+  solution: '**/Playground/DevOps.WinApp/DotNetConf.sln'
   buildConfiguration: 'Release'
 
 steps:
@@ -21,6 +21,7 @@ steps:
     publishWebProjects: false
     zipAfterPublish: false
     modifyOutputPath: false
+    projects: 'DevOps.WinApp/DotNetConf/DotNetConf.csproj'
     arguments: --output $(Build.ArtifactStagingDirectory)
 
 - task: PublishPipelineArtifact@1
