@@ -10,11 +10,6 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '3.0.x'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
@@ -23,7 +18,7 @@ steps:
     modifyOutputPath: false
     projects: 'DevOps.WinApp/DotNetConf/DotNetConf.csproj'
     arguments: --output $(Build.ArtifactStagingDirectory)
-
+    
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)'
