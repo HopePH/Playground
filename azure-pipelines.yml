@@ -21,8 +21,5 @@ steps:
     publishWebProjects: false
     zipAfterPublish: false
     modifyOutputPath: false
-    arguments: --output $(- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)'
-    artifact: 'Calculator')
+    arguments: --output $(Build.PublishPipelineArtifact)
 
