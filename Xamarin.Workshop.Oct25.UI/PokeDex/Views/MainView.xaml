@@ -7,6 +7,7 @@
     xmlns:effect="clr-namespace:PokeDex.Effects;assembly=PokeDex"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="Pokedex Tianggee-nised"
     prism:ViewModelLocator.AutowireViewModel="True"
     mc:Ignorable="d">
     <ContentPage.Content>
@@ -57,7 +58,7 @@
             </CollectionView>
             <Button
                 Grid.Row="2"
-                Margin="40,20"
+                Margin="40,60"
                 Clicked="Button_Clicked"
                 FontSize="24"
                 HeightRequest="66"
