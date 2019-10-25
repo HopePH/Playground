@@ -16,6 +16,12 @@ namespace PokeDex.ViewModels
     public class MainViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
+        private string[] products = new string[] {
+            "https://yolpunlastorage.blob.core.windows.net/yolpunlacontainer/Retail/External/spam1.jpg",
+            "https://yolpunlastorage.blob.core.windows.net/yolpunlacontainer/Retail/ChitoGrace/pastillas.png",
+            "https://yolpunlastorage.blob.core.windows.net/yolpunlacontainer/Retail/External/napkinion.jpeg",
+            "https://yolpunlastorage.blob.core.windows.net/yolpunlacontainer/Retail/ChitoGrace/bigRolls1.png"
+        };
 
         public ICommand TrainerCommand => new DelegateCommand(async () => await GoTrainerView());
         public ICommand ProcessQRCommand => new DelegateCommand<string>(async (s) => await OpenScanner(s));
@@ -38,7 +44,12 @@ namespace PokeDex.ViewModels
                 {
                     DataService dataService = new DataService();
                     var pokemon = await dataService.GetPokemonAsync(parsedId);
-                    if (pokemon != null) PokemonItems.Add(pokemon);
+
+                    if (pokemon != null)
+                    {
+                        pokemon.LovesTianggee = GetItem();
+                        PokemonItems.Add(pokemon);
+                    }
                 }
                 else
                     UserDialogs.Instance.Alert("Error in readin QR Code");
@@ -47,6 +58,13 @@ namespace PokeDex.ViewModels
             {
                 UserDialogs.Instance.Alert($"Opps error occured: {ex.Message}");
             }
+        }
+
+        private string GetItem()
+        {
+            Random rnd = new Random();
+            int mIndex = rnd.Next(products.Length);
+            return products[mIndex];
         }
     }
 }

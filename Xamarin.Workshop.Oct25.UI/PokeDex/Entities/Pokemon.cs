@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PokeDex.Entities
 {
@@ -15,5 +12,6 @@ namespace PokeDex.Entities
         public Species Species { get; set; }
         [JsonProperty("sprites")]
         public Sprites Sprites { get; set; }
+        public string LovesTianggee { get; set; }
     }
 }

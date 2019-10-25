@@ -72,6 +72,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Unity.Forms">
       <Version>7.2.0.1367</Version>
     </PackageReference>
@@ -89,7 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\ButtonGDEffect.cs" />
+    <Compile Include="Renderers\RoundedImageView.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\RoundedImageRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +109,9 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidAsset>
     <AndroidAsset Include="Assets\MuseoSansCyrl_0.otf">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\FontAwesomeSolid.otf">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
@@ -131,7 +139,11 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\manokpula.jpg">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PokeDex\PokeDex.csproj">
       <Project>{597AFF4C-AF66-42A5-A085-406A98DCBFA3}</Project>
@@ -141,5 +153,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\trainer.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

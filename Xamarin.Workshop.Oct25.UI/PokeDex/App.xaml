@@ -12,5 +12,10 @@
         <!--#region  COLORS-->
         <Color x:Key="pantoneRed">#DA596A</Color>
 
+        <OnPlatform x:Key="FontAwesomeSolid" x:TypeArguments="x:String">
+            <On Platform="Android" Value="FontAwesomeSolid.otf#Solid" />
+            <On Platform="iOS" Value="FontAwesome5FreeSolid" />
+        </OnPlatform>
+
     </Application.Resources>
 </prism:PrismApplication>

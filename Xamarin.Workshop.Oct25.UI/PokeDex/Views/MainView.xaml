@@ -3,6 +3,7 @@
     x:Class="PokeDex.Views.MainView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PokeDex.RenderedControls;assembly=PokeDex"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:effect="clr-namespace:PokeDex.Effects;assembly=PokeDex"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -17,15 +18,16 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Image
-                Margin="10"
-                HeightRequest="50"
+            <controls:RoundedImage
+                Margin="10,10,20,10"
+                HeightRequest="150"
                 HorizontalOptions="End"
-                Source="trainer.png">
+                Source="manokpula.jpg"
+                WidthRequest="150">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding TrainerCommand}" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
-            </Image>
+            </controls:RoundedImage>
             <CollectionView
                 Grid.Row="1"
                 HorizontalOptions="FillAndExpand"
@@ -44,14 +46,36 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Label HorizontalOptions="Center" Text="{Binding Name}" />
-                            <Image
-                                Grid.Row="1"
-                                Aspect="AspectFit"
-                                HeightRequest="150"
+                            <Label
+                                FontSize="24"
                                 HorizontalOptions="Center"
-                                Source="{Binding Sprites.FrontDefault}"
-                                WidthRequest="150" />
+                                Text="{Binding Name}"
+                                TranslationX="-80" />
+                            <StackLayout
+                                HorizontalOptions="Center"
+                                Orientation="Horizontal"
+                                Spacing="10">
+                                <Image
+                                    Grid.Row="1"
+                                    Aspect="AspectFit"
+                                    HeightRequest="150"
+                                    Source="{Binding Sprites.FrontDefault}"
+                                    WidthRequest="150" />
+                                <Label
+                                    Margin="3"
+                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                    FontSize="44"
+                                    HorizontalOptions="End"
+                                    Text="&#xf004;"
+                                    TextColor="{StaticResource pantoneRed}"
+                                    VerticalOptions="Center" />
+                                <Image
+                                    Grid.Row="1"
+                                    Aspect="AspectFit"
+                                    HeightRequest="240"
+                                    Source="{Binding LovesTianggee}"
+                                    WidthRequest="240" />
+                            </StackLayout>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
