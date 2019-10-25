@@ -1,0 +1,12 @@
+REGEX
+email : ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,5})$ => (testa.testb.testc@domain.com)
+password : ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
+   - 1 uppercase
+   - 1 lowercase
+   - 1 number
+   - 1 special character
+   - minimum 8 characters
+phone number : ^\b\d{3}[-.]?\d{3}[-.]\d{4}\b$
+   - 123-123-1234
+   - 123.123.1234
+   - 1231231234
