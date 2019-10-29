@@ -21,7 +21,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="280" />
+                <RowDefinition Height="400" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -77,6 +78,17 @@
                 BackgroundColor="Blue"
                 Clicked="btnJavaCaller_Clicked"
                 Text="Call Java API"
+                TextColor="White"
+                VerticalOptions="End">
+                <Button.Effects>
+                    <effect:GDButton />
+                </Button.Effects>
+            </Button>
+            <Button
+                Grid.Row="5"
+                Margin="0,20,0,0"
+                Clicked="Button_Clicked"
+                Text="Go To Weather API"
                 TextColor="White"
                 VerticalOptions="End">
                 <Button.Effects>
