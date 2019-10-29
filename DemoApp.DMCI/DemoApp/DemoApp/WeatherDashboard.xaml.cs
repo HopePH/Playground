@@ -14,26 +14,29 @@ namespace DemoApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeatherDashboard : ContentPage
     {
-        static string APIKey = "[PLACE YOUR API KEY HERE]";
         static string cityURL = "https://pokeapi.co/api/v2/pokemon/{0}";
-        string pokemonId = "7";
         public ObservableCollection<Pokemon> list = new ObservableCollection<Pokemon>();
 
         public WeatherDashboard()
         {
             InitializeComponent();
-            LoadData();
         }
 
-        public async void LoadData()
+        public async Task LoadData(int pokemonid)
         {
-            var apiUri = string.Format(cityURL, pokemonId);
+            var apiUri = string.Format(cityURL, pokemonid);
             var httpClient = new System.Net.Http.HttpClient();
             var httpResponse = await httpClient.GetAsync(apiUri);
             var resultString = httpResponse.Content.ReadAsStringAsync().Result;
             var pokemon = JsonConvert.DeserializeObject<Pokemon>(resultString);
             list.Add(pokemon);
             colPokemons.ItemsSource = list;
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            int pokemonId = int.Parse(ePokemon.Text.Trim());
+            await LoadData(pokemonId);
         }
     }
 }
