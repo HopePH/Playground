@@ -15,7 +15,7 @@ namespace DemoApp
     public partial class WeatherDashboard : ContentPage
     {
         static string cityURL = "https://pokeapi.co/api/v2/pokemon/{0}";
-        public ObservableCollection<Pokemon> list = new ObservableCollection<Pokemon>();
+        public List<Pokemon> list = new List<Pokemon>();
 
         public WeatherDashboard()
         {
@@ -24,13 +24,19 @@ namespace DemoApp
 
         public async Task LoadData(int pokemonid)
         {
-            var apiUri = string.Format(cityURL, pokemonid);
-            var httpClient = new System.Net.Http.HttpClient();
-            var httpResponse = await httpClient.GetAsync(apiUri);
-            var resultString = httpResponse.Content.ReadAsStringAsync().Result;
-            var pokemon = JsonConvert.DeserializeObject<Pokemon>(resultString);
-            list.Add(pokemon);
-            colPokemons.ItemsSource = list;
+            try
+            {
+                var apiUri = string.Format(cityURL, pokemonid);
+                var httpClient = new System.Net.Http.HttpClient();
+                var httpResponse = await httpClient.GetAsync(apiUri);
+                var resultString = httpResponse.Content.ReadAsStringAsync().Result;
+                var pokemon = JsonConvert.DeserializeObject<Pokemon>(resultString);
+                list.Add(pokemon);
+                if (colPokemons != null) colPokemons.ItemsSource = new ObservableCollection<Pokemon>(list);
+            }
+            catch (Exception ex)
+            { 
+            }
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

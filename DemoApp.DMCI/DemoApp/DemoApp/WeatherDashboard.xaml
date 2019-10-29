@@ -26,9 +26,14 @@
                 Grid.Row="1"
                 Clicked="Button_Clicked"
                 Text="Display Fave Pokemon" />
-            <CollectionView x:Name="colPokemons" Grid.Row="2">
+            <CollectionView
+                x:Name="colPokemons"
+                Grid.Row="2"
+                BackgroundColor="Yellow"               
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" />
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

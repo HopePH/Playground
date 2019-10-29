@@ -21,7 +21,7 @@ namespace DemoApp.Droid
 
             base.OnCreate(savedInstanceState);
 
-            XF.Forms.SetFlags("CollectionView_Experimental");
+            //XF.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
