@@ -9,6 +9,7 @@ namespace DemoApp
         public App()
         {
             InitializeComponent();
+            Akavache.Sqlite3.Registrations.Start("Training", () => SQLitePCL.Batteries_V2.Init());
             MainPage = new NavigationPage(new MainPage());
         }
 

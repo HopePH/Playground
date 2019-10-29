@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Akavache;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,7 +33,13 @@ namespace DemoApp
                 var resultString = httpResponse.Content.ReadAsStringAsync().Result;
                 var pokemon = JsonConvert.DeserializeObject<Pokemon>(resultString);
                 list.Add(pokemon);
-                if (colPokemons != null) colPokemons.ItemsSource = new ObservableCollection<Pokemon>(list);
+
+                if (colPokemons != null)
+                {
+                    BlobCache.UserAccount.InvalidateObject<List<Pokemon>>("SavedPokemon");
+                    BlobCache.UserAccount.InsertObject<List<Pokemon>>("SavedPokemon", list, TimeSpan.FromDays(1));
+                    colPokemons.ItemsSource = new ObservableCollection<Pokemon>(list);
+                }
             }
             catch (Exception ex)
             { 
@@ -43,6 +50,24 @@ namespace DemoApp
         {
             int pokemonId = int.Parse(ePokemon.Text.Trim());
             await LoadData(pokemonId);
+        }
+
+        private void Button2_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                BlobCache.UserAccount.GetObject<List<Pokemon>>("SavedPokemon")
+                    .Subscribe(list =>
+                    {
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            colPokemons.ItemsSource = new ObservableCollection<Pokemon>(list);
+                        });
+                    });
+            }
+            catch(Exception ex)
+            {
+            }
         }
     }
 }
